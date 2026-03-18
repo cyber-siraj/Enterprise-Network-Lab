@@ -2,9 +2,9 @@
 
 ## 🔹 Overview
 
-This project simulates a small enterprise network with segmented departments, core network services, and basic SOC-style monitoring. The goal was to build a strong networking foundation before applying security concepts.
+This project simulates a small enterprise network with segmented departments, essential network services, and basic SOC-style monitoring.
 
-My approach is based on a simple principle: **you cannot secure what you do not understand**. By first learning how networks operate—how devices communicate, how traffic flows, and how services interact—I was able to begin thinking from a security and monitoring perspective.
+My approach is based on a key principle: **you cannot secure what you do not understand**. Before focusing on security, I built a strong foundation in networking—understanding how devices communicate, how traffic flows, and how core services operate. This allowed me to begin thinking from a security and monitoring perspective rather than just configuration.
 
 ---
 
@@ -18,31 +18,32 @@ The network consists of:
 - 1 Core Server (DHCP, DNS, Syslog)
 
 ### 📸 Topology
-![Topology](screenshots/1_topology.png.png)
+![Topology](Network%20project/1_topology.png)
 
 ---
 
 ## 🔌 VLAN Segmentation
 
-Two VLANs were created to separate departments:
+Two VLANs were created to separate departments and isolate traffic:
 
 - **VLAN 10 — IT (192.168.10.0/24)**
 - **VLAN 20 — Finance (192.168.20.0/24)**
 
-Ports on the switch were manually assigned to each VLAN to isolate network traffic.
+Ports on the switch were manually assigned to each VLAN to enforce segmentation.
 
 ### 📸 VLAN Configuration
-![VLAN](screenshots/2_vlan_config.png)
+![VLAN](Network%20project/2_vlan_config.png)
 
 ---
 
 ## 🌐 Inter-VLAN Routing
 
-A router-on-a-stick configuration was implemented to allow communication between VLANs while maintaining segmentation.
+A router-on-a-stick configuration was implemented to allow controlled communication between VLANs.
 
-- Subinterfaces configured on the router:
-  - `192.168.10.1` (IT gateway)
-  - `192.168.20.1` (Finance gateway)
+Subinterfaces configured on the router:
+
+- `192.168.10.1` — IT Gateway  
+- `192.168.20.1` — Finance Gateway  
 
 ---
 
@@ -56,7 +57,7 @@ Dynamic IP addressing was configured on the server for both VLANs.
 - DNS: `192.168.10.2`
 
 ### 📸 DHCP (IT)
-![DHCP IT](screenshots/3_dhcp_it.png)
+![DHCP IT](Network%20project/3_dhcp_it.png)
 
 ---
 
@@ -66,7 +67,7 @@ Dynamic IP addressing was configured on the server for both VLANs.
 - DNS: `192.168.10.2`
 
 ### 📸 DHCP (Finance)
-![DHCP Finance](screenshots/4_dhcp_finance.png)
+![DHCP Finance](Network%20project/4_dhcp_finance.png)
 
 ---
 
@@ -80,8 +81,8 @@ The core server was configured with a static IP and used to host all network ser
   - DNS
   - Syslog
 
-### 📸 Server IP Configuration
-![Server IP](screenshots/5_server_ip.png)
+### 📸 Server Configuration
+![Server](Network%20project/5_server_ip.png)
 
 ---
 
@@ -91,60 +92,59 @@ A local DNS record was created to simulate internal name resolution:
 
 - `company.local → 192.168.10.2`
 
-This allows users to access services using a domain name instead of an IP address.
+This allows users to access internal services using a domain name instead of an IP address.
 
 ### 📸 DNS Configuration
-![DNS](screenshots/6_dns_config.png)
+![DNS](Network%20project/6_dns_config.png)
 
 ---
 
 ## 📊 Syslog Monitoring (SOC Concept)
 
-Basic network monitoring was implemented using syslog.
+Basic monitoring was implemented using syslog:
 
-- Router logs are sent to the central server
+- Router logs are forwarded to a centralized server
 - Configuration changes and system events are captured
-- Simulates how network activity is monitored in a SOC environment
+- Provides visibility into network activity
 
 ### 📸 Syslog Logs
-![Syslog](screenshots/7_syslog_logs.png)
+![Syslog](Network%20project/7_syslog_logs.png)
 
 ---
 
 ## 🔐 Security Perspective
 
-This project demonstrates foundational security concepts:
+This project demonstrates foundational cybersecurity concepts:
 
-- Network segmentation (VLANs)
-- Controlled communication via routing
-- Centralized logging for monitoring
-- Visibility into system-level events
+- Network segmentation using VLANs
+- Controlled communication via inter-VLAN routing
+- Centralized logging for monitoring and visibility
+- Awareness of system-level events
 
-While Packet Tracer has limited logging capabilities, this lab represents the **core idea of a Security Operations Center (SOC)**:
-monitoring network activity, analyzing events, and understanding system behavior.
+Although Packet Tracer has limited logging capabilities, this lab represents the **core concept of a Security Operations Center (SOC)**—collecting, monitoring, and analyzing network activity.
 
 ---
 
 ## 🚀 Future Improvements
 
-This project will be expanded to include:
+This project will be expanded with:
 
 - Access Control Lists (ACLs) for traffic filtering
 - Simulated attack scenarios (ping sweeps, abnormal traffic)
-- Advanced monitoring concepts
-- Integration with SIEM tools (e.g., Splunk)
+- More advanced monitoring techniques
+- Integration with SIEM tools such as Splunk
 
 ---
 
 ## 🧠 Key Takeaways
 
-- Strong networking fundamentals are essential before diving into security
-- Understanding traffic flow improves threat detection ability
-- Monitoring and logging are critical components of cybersecurity
+- Strong networking fundamentals are essential for cybersecurity
+- Understanding traffic flow improves detection and troubleshooting
+- Monitoring and logging are critical for security operations
 - Hands-on labs provide real-world context beyond theory
 
 ---
 
 ## 📌 Summary
 
-This lab bridges the gap between networking and cybersecurity by combining infrastructure setup with basic monitoring concepts. It reflects a practical, step-by-step approach to building the skills required for entry-level IT.
+This lab bridges the gap between networking and cybersecurity by combining infrastructure setup with basic monitoring concepts. It reflects a practical, hands-on approach to building the foundational skills required for entry-level IT and SOC roles.
