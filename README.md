@@ -147,4 +147,4 @@ This project will be expanded with:
 
 ## 📌 Summary
 
-This lab bridges the gap between networking and cybersecurity by combining infrastructure setup with basic monitoring concepts. It reflects a practical, hands-on approach to building the foundational skills required for entry-level IT and SOC roles.
+This lab bridges the gap between networking and cybersecurity by combining infrastructure setup with basic monitoring concepts. It reflects a practical, hands-on approach to building the foundational skills required for entry-level IT.
