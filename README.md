@@ -18,7 +18,7 @@ The network consists of:
 - 1 Core Server (DHCP, DNS, Syslog)
 
 ### 📸 Topology
-![Topology](screenshots/1_topology.png)
+![Topology](screenshots/1_topology.png.png)
 
 ---
 
