@@ -1,8 +1,8 @@
-# 🖧 Enterprise Network & SOC Monitoring Lab
+# 🖧 Enterprise Network 
 
 ## 🔹 Overview
 
-This project simulates a small enterprise network with segmented departments, essential network services, and basic SOC-style monitoring.
+This project simulates a small enterprise network with segmented departments, essential network services
 
 My approach is based on a key principle: **you cannot secure what you do not understand**. Before focusing on security, I built a strong foundation in networking—understanding how devices communicate, how traffic flows, and how core services operate. This allowed me to begin thinking from a security and monitoring perspective rather than just configuration.
 
